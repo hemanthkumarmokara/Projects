@@ -1,0 +1,78 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    
+    <!-- <link rel="stylesheet" href="result.css"> -->
+
+    <style>
+        body{
+            background-image: url("/static/2.jpg");
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* background-image: url("C:\\Users\\heman\\Downloads\\sports.jpg"); */
+            background-size: cover; /* You can adjust this based on your preference */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Fixed background scrolling */
+        }
+
+        .container {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            font-size: 100%;
+            background-color: rgb(196, 192, 191);
+            padding: 8px;
+            border-radius: 15px;
+            opacity: 85%;
+            position: absolute;
+            left: 39%;
+            top: 22%;
+        }
+        .class_name{
+            color: #b84a0b;
+            font-size: 120%;
+        }
+
+    </style>
+
+
+
+</head>
+<body >
+    
+
+    <!-- <h2>Predicted Class: {{ predicted_class }}</h2> -->
+  
+    <!-- {% if 1==2 %}
+    <div class="container">
+    <h1>Result</h1>
+    <h2>Predicted sport is {{ predicted_class }}</h2>
+    </div>
+    <img src= "C:\\Users\\heman\\OneDrive\\Desktop\\cricket1.jpeg" alt="Uploaded Image">
+    {% else %} --> 
+    <div class="container">    <h2>Result</h2>
+    <!-- <h3>from else bro</h3> -->
+    <h2>Predicted sport is  <span class="class_name"> {{ predicted_class_name }}  </span></h2>
+
+    </div>
+    <figure style="position: absolute; left: 40%; top: 50%;">
+        <!-- Display the uploaded image -->
+        <img src="/static/hoh.jpg" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+
+        <!-- Add a caption using figcaption -->
+        <figcaption style="text-align: center; color: #f0ebeb; font-size: 80%;">Choosen image</figcaption>
+    </figure>
+    <!-- <img src= "C:\\Users\\heman\\OneDrive\\Desktop\\volleyball.jpeg"  alt="Uploaded Image"> -->
+    <!-- {% endif %} -->
+    <!-- Add any other content you want on the result page -->
+</body>
+</html>
