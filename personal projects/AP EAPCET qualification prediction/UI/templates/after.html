@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            background-color: #a3cfb4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #431ec9;
+        }
+        h2 {
+            color: #000000;
+        }
+        img {
+            width: 200px; /* Adjust the size of the image */
+            height: auto;
+            margin-top: 20px;
+        }
+        a {
+            color: #3484cf;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+        <h1>PREDICTION</h1>
+        {% if data == 1.0 %}
+            <h2>You are Qualified</h2>
+            <img src="static/right.jpg" alt="Right Image">
+        {% else %}
+            <h2>You are not Qualified</h2>
+            <img src="static/wrong.jpg" alt="Wrong Image">
+        {% endif %}
+        
+        <br><br>
+        <a href="/">Go back to home page</a>
+    </center>
+
+</body>
+</html>
