@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowsiness Detector</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        /* Container for the forms */
+        .form-container {
+            display: flex;
+            margin-left: 150px;
+            margin-top: 90px;
+        }
+    
+        /* Style for individual forms */
+        form {
+            margin-right: 70px; /* Adjust the spacing between forms */
+            font-weight: 300;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 4px;
+            text-align: center;
+            color: white;
+        }
+        button {
+            padding: 15px 20px; /* Adjust padding to increase button size */
+            font-size: 16px;   /* Adjust font size if needed */
+            border-radius: 20px;
+            font-weight: 200;
+            background-color: rgb(104, 226, 226);
+            transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+        
+
+        }
+        /* Hover effect */
+        button:hover {
+            background-color: rgb(24, 255, 255); /* Change the background color on hover */
+        }
+               /* Style for the image */
+        #frameImage {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            /* margin-left: 700px; Push the image to the right */
+            display: block; /* Ensure it's a block-level element */
+        }
+        .image-container {
+            border: 2px solid #000; /* Border style */
+            display: inline-block; /* Ensure inline-block layout */
+            position: relative; /* Enable absolute positioning for the rectangle */
+            margin-left: 700px;
+            border-radius: 12px;
+            padding: 2px;
+        }
+        .rectangle {
+            position: absolute; /* Position the rectangle relative to its container */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid rgb(104, 226, 226); /* Rectangle border color */
+            box-sizing: border-box; /* Include border in width and height calculations */
+            pointer-events: none; /* Allow clicks to pass through the rectangle to the image */
+            border-radius: 12px;
+        }
+     /* Container for buttons and image */
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px; /* Adjust padding as needed */
+        }
+        .status-message {
+            color: rgb(0, 0, 0);
+            margin-top: 1px; /* Adjust margin as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Drowsiness Detector</h1>
+    </div>
+    
+    <div class="form-container">
+        <form id="runForm" action="/run" method="post">
+            <button type="submit">Run</button>
+        </form>
+        <form id="haltForm" action="/halt" method="post">
+            <button type="submit">Halt</button>
+        </form>
+    </div>
+    
+    <div class="image-container">
+        <img id="frameImage" src="/latest_frame" alt="Latest Frame">
+        <div class="rectangle"></div>
+    </div>
+
+    <!-- Move status message below the buttons -->
+    <div id="statusMessage" class="status-message"></div>
+    
+    <script>
+
+    // Update the frame image every second
+        var intervalId = setInterval(function () {
+            // Check if the image with the ID 'frameImage' exists
+            var frameImage = $("#frameImage");
+            if (frameImage.length > 0) {
+                // If the image exists, update its 'src' attribute with a new timestamp
+                frameImage.attr("src", "/latest_frame?" + new Date().getTime());
+            } else {
+                // If the image doesn't exist, stop the interval
+                clearInterval(intervalId);
+            }
+        }, 500);
+
+        // Handle form submission asynchronously
+        $(document).ready(function () {
+            $("#runForm").submit(function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Send AJAX request to the server
+                $.ajax({
+                    type: 'POST',
+                    url: '/run',
+                    success: function (data) {
+                        // Display the status message on the page
+                        $("#statusMessage").text(data);
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+
+            $("#haltForm").submit(function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Send AJAX request to the server
+                $.ajax({
+                    type: 'POST',
+                    url: '/halt',
+                    success: function (data) {
+                        // Display the status message on the page
+                        $("#statusMessage").text(data);
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
