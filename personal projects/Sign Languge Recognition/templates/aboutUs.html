@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ActionLexa</title>
+    <!-- <link rel="stylesheet" href="aboutUs.css" /> -->
+
+    <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.main {
+  /* background-color: #2a3d4f1f; */
+  background-image: url("./static/about-bg2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8%;
+  background: #7d88db;
+}
+nav h2 {
+  font-size: 25px;
+  color: black;
+  margin-left: -570px;
+}
+nav .logo {
+  width: 60px;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+  position: relative;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+}
+nav ul li ::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #4a55a2;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+nav ul li:hover ::after {
+  width: 100%;
+}
+/* About Us section styles */
+.about-us {
+  text-align: center; /* Center-align the content */
+}
+/* Styles for the mission section */
+.mission-container {
+  margin-top: 120px;
+  text-align: center; /* Center-align the content */
+  margin-bottom: 40px; /* Add margin below mission section */
+}
+
+.mission-container h2 {
+  margin-top: 20px;
+  font-size: 50px;
+  color: rgb(17, 137, 103);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+}
+
+.mission-container p {
+  padding: 30px;
+  text-align: left;
+  margin-bottom: 10px; /* Add margin below mission paragraph */
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 1.6; /* Increase line height for better readability */
+}
+
+/* Key features section styles */
+.features {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 10px; /* Increase margin between sections */
+}
+
+.feature {
+  border: 2px solid#7d88db;
+  width: 32%;
+  padding: 10px; /* Add space around features */
+  background-color: #7d88db; /* White background */
+  border-radius: 18px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.feature h3 {
+  margin-top: 10px; /* Add margin above feature headings */
+}
+
+.feature p {
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 550;
+  font-size: 18px;
+}
+
+/* Reviews section styles */
+h2 {
+  font-size: 50px;
+  color: rgb(17, 137, 103);
+  font-weight: 600;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.reviews-container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.review {
+  width: 70%;
+  margin-bottom: 20px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px #7d88db; /* Add box shadow */
+  transition: transform 0.3s ease; /* Add smooth transition */
+}
+
+.review:hover {
+  transform: translateY(-5px); /* Add hover effect */
+}
+
+.review img {
+  width: 300px;
+  height: 250px;
+  border-radius: 50%;
+  margin-right: 10px;
+  float: left;
+}
+
+.review p {
+  margin-top: 0;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <img src="./static/LexaLogo.png" alt="ActiveLexa" class="logo" />
+        <h2>ActionLexa</h2>
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/aboutUs">About</a></li>
+          <!-- <li><a href="#">History</a></li> -->
+          <li><a href="/contact">Contact us</a></li>
+          <!-- <li><a href="#">Profile</a></li> -->
+        </ul>
+      </nav>
+
+      <section class="about-us">
+        <div class="mission-container">
+          <h2>Our Vision</h2>
+          <p>
+            We recognized the need for accessible and inclusive communication
+            solutions for people with disabilities. This Action Lexa serves as a
+            vital bridge, through real-time sign recognition and seamless
+            translation, we empower voices that deserve to be heard. Our
+            commitment lies in bridging the gap between dumb and other
+            individuals, we’re breaking down barriers and empower individuals to
+            communicate effectively and effortlessly.
+          </p>
+        </div>
+        <h2>Key Features</h2>
+        <div class="features">
+          <div class="feature">
+            <img
+              src="./static/real-time-recognition.png"
+              alt="Real-time Sign Language Recognition"
+              class="feature-image"
+              style="width: 330px; height: 250px; border-radius: 10px"
+            />
+            <h3>Real-time Sign Language Recognition</h3>
+            <p>
+              Our system recognizes sign language gestures in real-time,
+              enabling fluid and natural communication.
+            </p>
+          </div>
+          <div class="feature">
+            <img
+              src="./static/text-to-voice.png"
+              alt="Text-to-Voice Conversion"
+              class="feature-image"
+              style="width: 330px; height: 250px; border-radius: 10px"
+            />
+            <h3>Text-to-Voice Conversion</h3>
+            <p>
+              Text input is instantly converted into spoken words, ensuring that
+              every message is heard and understood.
+            </p>
+          </div>
+          <div class="feature">
+            <img
+              src="./static/user-friendly-interface.jpg"
+              alt="User-friendly Interface"
+              class="feature-image"
+              style="width: 330px; height: 250px; border-radius: 10px"
+            />
+            <h3>User-friendly Interface</h3>
+            <p>
+              Our platform is designed with accessibility in mind, featuring an
+              intuitive interface that is easy to navigate for users of all
+              abilities.
+            </p>
+          </div>
+        </div>
+        <h2>User stories</h2>
+        <div class="reviews-container">
+          <div class="review">
+            <img src="./static/user1.jpg" alt="User 1" />
+            <p>
+              "Discovering ActionLexa has been a game-changer for me. As someone
+              with a hearing impairment, I've often struggled to communicate
+              effectively. However, with its real-time sign language recognition
+              feature, ActionLexa has made communication effortless and natural
+              for me. I'm grateful for this innovative solution that has truly
+              enhanced my daily interactions."
+            </p>
+          </div>
+          <div class="review">
+            <img src="./static/user2.jpg" alt="User 2" />
+            <p>
+              "ActionLexa has completely changed the way I communicate online.
+              With its intuitive interface and real-time sign language
+              recognition, I can now engage in conversations effortlessly. It's
+              a game-changer for anyone looking for inclusive communication
+              solutions."
+            </p>
+          </div>
+          <div class="review">
+            <img src="./static/user3.jpg" alt="User 3" />
+            <p>
+              "I'm amazed by the effectiveness of ActionLexa's real-time sign
+              language recognition. As someone who relies on sign language to
+              communicate, finding a platform that accurately interprets my
+              gestures has been invaluable. ActionLexa has truly exceeded my
+              expectations."
+            </p>
+          </div>
+          <div class="review">
+            <img src="./static/user4.jpg" alt="User 4" />
+            <p>
+              "ActionLexa's text-to-voice conversion feature has revolutionized
+              the way I interact with online content. Now, I can easily
+              understand text-based conversations, thanks to its seamless
+              conversion process. ActionLexa has made accessibility a priority,
+              and it shows."
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="aboutUs.js"></script>
+  </body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="actonlexa\new\templates\home.html" /> -->
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.main {
+  background-color: #2a3d4f1f;
+}
+.sub-main {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding-top: 00px;
+}
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8%;
+  background: #7d88db;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+  position: relative;
+}
+
+nav ul li:not(:last-child) {
+  margin-right: 0px; /* Adjust the right margin between buttons */
+}
+
+
+
+
+nav .logo {
+  width: 100px;
+}
+/* nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+  position: relative;
+} */
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+}
+nav ul li ::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #4a55a2;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+nav ul li:hover ::after {
+  width: 100%;
+}
+.content {
+  margin-top: 10px;
+  text-align: center;
+}
+.content h1 {
+  font-size: 160px;
+
+  font-weight: 600;
+  margin-bottom: 30px;
+  transition: 0.5s;
+}
+.content h1:hover {
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+}
+.content button {
+  position: relative;
+  background: transparent;
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 14px 50px;
+  border-radius: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+  z-index: 1;
+  border: 2px solid #4a55a2;
+  overflow: hidden;
+}
+.content button span {
+  width: 0;
+  background: #4a55a2;
+  height: 100%;
+  border-radius: 50px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+.content button:hover span {
+  width: 100%;
+}
+.content button:hover {
+  border: none;
+  color: #fff;
+}
+h1 {
+  font-size: 45px;
+  font-weight: 600;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+h1 span {
+  color: #2a2f4f;
+}
+
+h2 {
+  margin-right: 450px;
+  color: #000;
+  font-family: "Arial", sans-serif; /* Choose a suitable font family */
+  font-size: 36px; /* Adjust the font size */
+
+  letter-spacing: 2px; /* Add letter spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+  /* Add more styles if needed */
+}
+
+textarea {
+  width: 650px;
+  height: 250px;
+  background: #4a55a2;
+  color: #fff;
+  font-size: 15px;
+  border: 0;
+  outline: 0;
+  padding: 20px;
+  border-radius: 10px;
+  resize: none;
+  margin-bottom: 30px;
+}
+textarea::placeholder {
+  font-size: 16px;
+  color: #ddd;
+}
+.row {
+  width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.row button {
+  background: #2a2f4f;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.row select {
+  color: #fff;
+  background: #4a55a2;
+  height: 50px;
+  padding: 0 20px;
+  border: 0;
+  outline: 0;
+  border-radius: 35px;
+}
+/* .live-video {
+  width: 500px;
+  height: 500px;
+  border: 2px solid #4a55a2;
+  border-radius: 40px; /* Border radius for rounded corners */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); Optional: Add a box shadow */
+/* }  */
+*/
+
+
+.video-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.video-controls button {
+  background: #2a2f4f;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: 0 10px; /* Added margin between buttons */
+}
+.label-container {
+            margin-top: 2px;
+            margin-left: 235px;
+            margin-bottom: 30px;
+        }
+        .label-item {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .tts{
+          background-color: rgb(128, 128, 211);
+          padding: 20px;
+          border-radius: 30px;
+          margin-left: w00px;
+        }
+        .main_video{
+          border: 4px solid #4a55a2;
+          border-radius: 30px;
+          margin-left: 100px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          height: 450px;
+          width: 450px;
+        }
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $('#startButton').click(function() {
+          $.post('/start_execution', function(response) {
+              console.log(response);
+          });
+      });
+
+      $('#haltButton').click(function() {
+          $.post('/halt_execution', function(response) {
+              console.log(response);
+          });
+      });
+
+      $('#getIndexButton').click(function() {
+          $.get('/get_index_values', function(response) {
+              if ('index_values' in response) {
+                  $('#indexValues').empty();
+                  response['index_values'].forEach(function(index) {
+                      $('#indexValues').append('<li>' + index + '</li>');
+                  });
+              } else {
+                  console.log(response['error']);
+              }
+          });
+      });
+  });
+</script>
+
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <img src="./static/LexaLogo.png" alt="ActiveLexa" class="logo" />
+        <h2>ActionLexa</h2>
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/aboutUs">About</a></li>
+          <!-- <li><a href="#">History</a></li> -->
+          <li><a href="/contact">Contact us</a></li>
+          <!-- <li><a href="#">Profile</a></li> -->
+        </ul>
+      </nav>
+<br><br>
+      <h1 style="text-align: center; color: #7895cb; margin-top: 120px">
+        Giving Voice to <span>Gestures</span>
+      </h1>
+      <div class="sub-main">
+     
+        <div class="live-video">
+          <!-- <video id="video" autoplay playsinline></video> -->
+          
+    <img src="{{ url_for('video_feed') }}" alt="Video Feed" width="640" height="480" id="video" class="main_video">
+          <br><br>     
+        </div>
+
+        
+        <div class="tts">
+      <!-- <h2>joj</h2> -->
+          <div class="label-container" id="label-container">
+            <!-- Labels will be dynamically added here -->
+        </div>
+        
+          <div class="row">
+            <select name="" id=""></select>
+            <button>Listen</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- <h1>Label History</h1> -->
+
+
+
+    <script src="./home.js"></script>
+    
+    <script>
+      // Keep track of the last displayed label
+      var lastDisplayedLabel = '';
+
+      // Function to add a new label to the label container
+      function addLabel(label) {
+          var labelContainer = document.getElementById('label-container');
+          
+          // Check if the incoming label is different from the last displayed label
+          if (label !== lastDisplayedLabel) {
+              var div = document.createElement('div');
+              div.className = 'label-item';
+              div.textContent = label;
+              labelContainer.appendChild(div);
+              
+              // Update the last displayed label
+              lastDisplayedLabel = label;
+          }
+      }
+
+      // Function to handle SSE messages
+      function handleSSE(event) {
+          if (event.data) {
+              addLabel(event.data);
+          }
+      }
+
+      // Establish SSE connection
+      var eventSource = new EventSource('/label_updates');
+      eventSource.onmessage = handleSSE;
+//////////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function() {
+    const button = document.querySelector(".tts button");
+    const labelContainer = document.querySelector(".tts .label-container");
+    const select = document.querySelector(".tts select");
+
+    // Add languages to the select dropdown
+    const languages = [
+        { code: "en-US", name: "English (US)" },
+        { code: "en-GB", name: "English (UK)" },
+        { code: "es-ES", name: "Spanish" },
+        { code: "fr-FR", name: "French" }
+        // Add more languages as needed
+    ];
+
+    languages.forEach(language => {
+        const option = document.createElement("option");
+        option.value = language.code;
+        option.textContent = language.name;
+        select.appendChild(option);
+    });
+
+    // Event listener for the listen button
+    button.addEventListener("click", function() {
+        const remainingText = getRemainingText(labelContainer);
+        const selectedLanguage = select.value;
+
+        if (remainingText !== "") {
+            speak(remainingText, selectedLanguage);
+            labelContainer.textContent = "";
+        } else {
+            alert("No more text to speak.");
+        }
+    });
+
+    // Function to get the remaining text content
+    function getRemainingText(container) {
+        // Get text content directly inside the container
+        return container.textContent.trim();
+    }
+
+    // Function to speak the provided text in the specified language
+    function speak(text, language) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = language;
+        speechSynthesis.speak(utterance);
+    }
+});
+
+
+  </script>
+  </body>
+</html>

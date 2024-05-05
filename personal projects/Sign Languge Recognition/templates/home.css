@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+.main {
+  background-color: #2a3d4f1f;
+}
+.sub-main {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding-top: 00px;
+}
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8%;
+  background: #7d88db;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+  position: relative;
+}
+
+nav ul li:not(:last-child) {
+  margin-right: 40px; /* Adjust the right margin between buttons */
+}
+
+
+
+
+nav .logo {
+  width: 100px;
+}
+/* nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+  position: relative;
+} */
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+}
+nav ul li ::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #4a55a2;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+nav ul li:hover ::after {
+  width: 100%;
+}
+.content {
+  margin-top: 10px;
+  text-align: center;
+}
+.content h1 {
+  font-size: 160px;
+
+  font-weight: 600;
+  margin-bottom: 30px;
+  transition: 0.5s;
+}
+.content h1:hover {
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+}
+.content button {
+  position: relative;
+  background: transparent;
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 14px 50px;
+  border-radius: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+  z-index: 1;
+  border: 2px solid #4a55a2;
+  overflow: hidden;
+}
+.content button span {
+  width: 0;
+  background: #4a55a2;
+  height: 100%;
+  border-radius: 50px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+.content button:hover span {
+  width: 100%;
+}
+.content button:hover {
+  border: none;
+  color: #fff;
+}
+h1 {
+  font-size: 45px;
+  font-weight: 600;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: #fff;
+}
+h1 span {
+  color: #2a2f4f;
+}
+
+h2 {
+  margin-right: 450px;
+  color: #000;
+  font-family: "Arial", sans-serif; /* Choose a suitable font family */
+  font-size: 36px; /* Adjust the font size */
+
+  letter-spacing: 2px; /* Add letter spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+  /* Add more styles if needed */
+}
+
+textarea {
+  width: 650px;
+  height: 250px;
+  background: #4a55a2;
+  color: #fff;
+  font-size: 15px;
+  border: 0;
+  outline: 0;
+  padding: 20px;
+  border-radius: 10px;
+  resize: none;
+  margin-bottom: 30px;
+}
+textarea::placeholder {
+  font-size: 16px;
+  color: #ddd;
+}
+.row {
+  width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.row button {
+  background: #2a2f4f;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.row select {
+  color: #fff;
+  background: #4a55a2;
+  height: 50px;
+  padding: 0 20px;
+  border: 0;
+  outline: 0;
+  border-radius: 35px;
+}
+.live-video video {
+  width: 500px;
+  height: 500px;
+  border: 2px solid #4a55a2;
+  border-radius: 10px; /* Border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: Add a box shadow */
+}
+
+
+.video-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.video-controls button {
+  background: #2a2f4f;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 35px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: 0 10px; /* Added margin between buttons */
+}
